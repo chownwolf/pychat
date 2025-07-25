@@ -7,9 +7,6 @@ def main():
     # Initialize components here
     # For example: chat_room = ChatRoom()
 
-if __name__ == "__main__":
-    main()
-
 def setup_logging():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Logging is set up.")
@@ -39,3 +36,8 @@ def get_chat_messages(chat_room):
     messages = chat_room.get_messages()
     logging.info(f"Messages: {messages}")
     return messages
+
+if __name__ == "__main__":
+    main()
+
+
