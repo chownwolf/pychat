@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import scrolledtext, messagebox
 from ..pychat import add_user_to_chat, remove_user_from_chat, send_message_to_chat, get_chat_messages
 from ..chat.chat_room import ChatRoom
+from client.chat_client import ChatClient
 
 class ChatApp:
     def __init__(self, master):
@@ -39,6 +40,16 @@ class ChatApp:
             self.message_entry.delete(0, tk.END)
         else:
             messagebox.showwarning("Warning", "Please enter a user and a message.")
+    
+    def display_message(self, msg):
+        self.messages_area.config(state='normal')
+        self.messages_area.insert(tk.END, msg + "\n")
+        self.messages_area.config(state='disabled')
+        self.messages_area.yview(tk.END)
+
+    def on_closing(self):
+        self.client.close()
+        self.master.destroy()
 
     def update_chat_display(self):
         messages = get_chat_messages(self.chat_room)
