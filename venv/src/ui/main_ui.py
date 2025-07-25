@@ -47,15 +47,6 @@ class ChatApp:
         self.messages_area.config(state='disabled')
         self.messages_area.yview(tk.END)
 
-    # def update_chat_display(self):
-    #     messages = get_chat_messages(self.chat_room)
-    #     self.messages_area.config(state='normal')
-    #     self.messages_area.delete(1.0, tk.END)
-    #     for msg in messages:
-    #         self.messages_area.insert(tk.END, msg + "\n")
-    #     self.messages_area.config(state='disabled')
-    #     self.messages_area.yview(tk.END)
-
     def add_user(self):
         user = self.user_entry.get()
         if user:
@@ -71,12 +62,6 @@ class ChatApp:
             self.user_entry.delete(0, tk.END)
         else:
             messagebox.showwarning("Warning", "Please enter a user name.")
-
-    # def update_chat_display(self, message):
-    #     self.messages_area.config(state='normal')
-    #     self.messages_area.insert(tk.END, message + "\n")
-    #     self.messages_area.config(state='disabled')
-    #     self.messages_area.yview(tk.END)
 
 if __name__ == "__main__":
     root = tk.Tk()
