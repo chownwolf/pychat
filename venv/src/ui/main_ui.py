@@ -72,11 +72,11 @@ class ChatApp:
         else:
             messagebox.showwarning("Warning", "Please enter a user name.")
 
-    def update_chat_display(self, message):
-        self.messages_area.config(state='normal')
-        self.messages_area.insert(tk.END, message + "\n")
-        self.messages_area.config(state='disabled')
-        self.messages_area.yview(tk.END)
+    # def update_chat_display(self, message):
+    #     self.messages_area.config(state='normal')
+    #     self.messages_area.insert(tk.END, message + "\n")
+    #     self.messages_area.config(state='disabled')
+    #     self.messages_area.yview(tk.END)
 
 if __name__ == "__main__":
     root = tk.Tk()
