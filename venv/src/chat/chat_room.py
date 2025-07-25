@@ -13,7 +13,7 @@ class ChatRoom:
 
     def send_message(self, user, message):
         if user in self.users:
-            self.messages.append((user, message))
+            self.messages.append(f"{user}: {message}")  # <-- Ensure this is a string
 
     def get_messages(self):
         return self.messages.copy()
