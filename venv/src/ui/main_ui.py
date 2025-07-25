@@ -33,10 +33,19 @@ class ChatApp:
         user = self.user_entry.get()
         if message and user:
             send_message_to_chat(self.chat_room, user, message)
-            self.update_chat_display(f"{user}: {message}")
+            self.update_chat_display()  # Show all messages
             self.message_entry.delete(0, tk.END)
         else:
             messagebox.showwarning("Warning", "Please enter a user and a message.")
+
+    def update_chat_display(self):
+        messages = get_chat_messages(self.chat_room)
+        self.messages_area.config(state='normal')
+        self.messages_area.delete(1.0, tk.END)
+        for msg in messages:
+            self.messages_area.insert(tk.END, msg + "\n")
+        self.messages_area.config(state='disabled')
+        self.messages_area.yview(tk.END)
 
     def add_user(self):
         user = self.user_entry.get()
