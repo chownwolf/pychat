@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import scrolledtext, messagebox, simpledialog
 from src.pychat import add_user_to_chat, remove_user_from_chat, send_message_to_chat, get_chat_messages
+from src.chat.chat_room import ChatRoom
 
 class ChatApp:
     def __init__(self, master):
