@@ -32,6 +32,8 @@ class ChatApp:
         message = self.message_entry.get()
         user = self.user_entry.get()
         if message and user:
+            if user not in self.chat_room.users:
+                add_user_to_chat(self.chat_room, user)
             send_message_to_chat(self.chat_room, user, message)
             self.update_chat_display()  # Show all messages
             self.message_entry.delete(0, tk.END)
