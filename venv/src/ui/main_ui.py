@@ -8,7 +8,7 @@ class ChatApp:
         self.master = master
         master.title("Chat Application")
 
-        self.chat_room = None  # This will be initialized with an actual ChatRoom instance
+        self.chat_room = ChatRoom()  # Initialize with a ChatRoom instance
 
         self.messages_area = scrolledtext.ScrolledText(master, state='disabled')
         self.messages_area.pack(padx=10, pady=10)
