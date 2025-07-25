@@ -47,6 +47,15 @@ class ChatApp:
         self.messages_area.config(state='disabled')
         self.messages_area.yview(tk.END)
 
+    # def update_chat_display(self):
+    #     messages = get_chat_messages(self.chat_room)
+    #     self.messages_area.config(state='normal')
+    #     self.messages_area.delete(1.0, tk.END)
+    #     for msg in messages:
+    #         self.messages_area.insert(tk.END, msg + "\n")
+    #     self.messages_area.config(state='disabled')
+    #     self.messages_area.yview(tk.END)
+
     def add_user(self):
         user = self.user_entry.get()
         if user:
