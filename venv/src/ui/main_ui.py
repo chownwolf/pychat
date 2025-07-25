@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import scrolledtext, messagebox
 from ..pychat import add_user_to_chat, remove_user_from_chat, send_message_to_chat, get_chat_messages
 from ..chat.chat_room import ChatRoom
-from client.chat_client import ChatClient
+from ..client.chat_client import ChatClient
 
 class ChatApp:
     def __init__(self, master):
